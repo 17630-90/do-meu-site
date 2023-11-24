@@ -160,23 +160,26 @@ body {
 
 
 .container {
+    position: relative; /* Adiciona um contexto de posicionamento ao contêiner */
+    width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100%;
     overflow: hidden;
-    padding: 0;
-    margin: 0;
     background: black;
 }
 
 .container iframe {
-    width: 95%; /* Isso fará com que o iframe preencha toda a largura do contêiner */
-    height: 95%; /* Isso fará com que o iframe preencha toda a altura do contêiner */
+    position: absolute; /* Posiciona o iframe em relação ao contêiner */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border: none;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
 
 
 
