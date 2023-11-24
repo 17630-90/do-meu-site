@@ -160,7 +160,7 @@ body {
 
 
 .container {
-    display: flex;
+    display: auto;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -170,8 +170,8 @@ body {
     margin: 0;
 }
 .container iframe {
-    width: 70%; /* Ajuste para 70% para deixar a apresentação um pouco menor */
-    height: 70%; /* Ajuste para 70% para deixar a apresentação um pouco menor */
+    width: 50%; /* Ajuste para 70% para deixar a apresentação um pouco menor */
+    height: 50%; /* Ajuste para 70% para deixar a apresentação um pouco menor */
 }
 
 
