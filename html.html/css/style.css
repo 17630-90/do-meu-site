@@ -160,19 +160,24 @@ body {
 
 
 .container {
-    display: flex; /* Isso faz com que os elementos filhos do contêiner sejam dispostos em uma linha */
-    justify-content: center; /* Isso centraliza os elementos filhos na horizontal */
-    align-items: center; /* Isso centraliza os elementos filhos na vertical */
-    height: 100vh; /* Isso faz com que o contêiner ocupe toda a altura da janela de visualização */
-    width: 100%; /* Isso faz com que o contêiner ocupe toda a largura da janela de visualização */
-    overflow: hidden; /* Isso esconde qualquer conteúdo que possa sair fora do contêiner */
-    padding: 0; /* Isso remove qualquer espaço interno do contêiner */
-    margin: 0; /* Isso remove qualquer espaço externo do contêiner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background: black; /* Adiciona um fundo preto para simular um player de vídeo */
 }
+
 .container iframe {
-    width: 40%; /* Isso faz com que o iframe ocupe 70% da largura do contêiner */
-    height: 40%; /* Isso faz com que o iframe ocupe 70% da altura do contêiner */
+    width: 70%;
+    height: 70%;
+    border: none; /* Remove a borda do iframe */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao redor do iframe para dar uma sensação de profundidade */
 }
+
 
 
 
