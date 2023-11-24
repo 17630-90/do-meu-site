@@ -159,23 +159,24 @@ body {
 }
 
 
-.container {
+/* Estilo para o contêiner do vídeo */
+.video-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    background: black;
+    height: 100vh; /* Altura da janela de visualização */
+    width: 100vw; /* Largura da janela de visualização */
+    background: black; /* Fundo preto para simular um player de vídeo */
 }
 
-.container iframe {
-    width: 100%; /* Isso fará com que o iframe preencha toda a largura do contêiner */
-    height: 100%; /* Isso fará com que o iframe preencha toda a altura do contêiner */
-    border: none;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+.video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Ajuste para 80% para deixar a apresentação um pouco menor */
+    height: 80%; /* Ajuste para 80% para deixar a apresentação um pouco menor */
+    border: none; /* Remove a borda do iframe */
 }
 
 
