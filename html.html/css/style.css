@@ -172,11 +172,12 @@ body {
 }
 
 .container iframe {
-    width: 90%; /* Isso fará com que o iframe preencha toda a largura do contêiner */
-    height: 90%; /* Isso fará com que o iframe preencha toda a altura do contêiner */
+    width: 95%; /* Isso fará com que o iframe preencha toda a largura do contêiner */
+    height: 95%; /* Isso fará com que o iframe preencha toda a altura do contêiner */
     border: none;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
 
 
 
