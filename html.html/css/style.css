@@ -160,19 +160,20 @@ body {
 
 
 .container {
-    display: auto;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100%;
-    overflow: auto;
+    overflow: hidden; /* Alterado de auto para hidden */
     padding: 0;
     margin: 0;
 }
 .container iframe {
-    width: 50%; /* Ajuste para 70% para deixar a apresentação um pouco menor */
-    height: 50%; /* Ajuste para 70% para deixar a apresentação um pouco menor */
+    width: 70%; /* Ajuste para 70% para deixar a apresentação um pouco menor */
+    height: 70%; /* Ajuste para 70% para deixar a apresentação um pouco menor */
 }
+
 
 
 
