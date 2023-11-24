@@ -168,15 +168,16 @@ body {
     overflow: hidden;
     padding: 0;
     margin: 0;
-    background: black; /* Adiciona um fundo preto para simular um player de vídeo */
+    background: black;
 }
 
 .container iframe {
-    width: 70%;
-    height: 70%;
-    border: none; /* Remove a borda do iframe */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao redor do iframe para dar uma sensação de profundidade */
+    max-width: 100%; /* Isso fará com que o iframe não exceda a largura do contêiner */
+    max-height: 100%; /* Isso fará com que o iframe não exceda a altura do contêiner */
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
 
 
 
