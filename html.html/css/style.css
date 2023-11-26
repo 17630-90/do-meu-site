@@ -181,29 +181,41 @@ body {
     
 }
 
-#mainnav ul {
-    list-style: none;
+.button {
+    width: 50px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
   }
   
-  #mainnav ul li {
-    padding:10px 15px;
-    background:#171717;
-    width: 150px; /* Define a largura do botão aqui */
+  .line {
+    background-color: #000;
+    height: 2px;
+    width: 100%;
+    position: absolute;
   }
   
-  .wrapper-menu {
-    position:relative;
+  .line:nth-child(1) {
+    top: 0;
+  }
+  
+  .line:nth-child(2) {
+    top: 50%;
+  }
+  
+  .line:nth-child(3) {
+    bottom: 0;
   }
   
   .dropdown {
-    position:absolute;
-    left:0;
-    display:none;
-    width: 100%; /* Faz com que o menu dropdown tenha a mesma largura do botão */
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 100%;
   }
   
-  .wrapper-dropdown:hover > .dropdown {
-    display:block;
+  .button:hover .dropdown {
+    display: block;
   }
   
 
