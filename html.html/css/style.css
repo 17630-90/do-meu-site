@@ -189,7 +189,7 @@ body {
     height: 20px; /* Ajuste a altura do botão aqui */
     position: absolute;
     top: 15px; /* Ajuste a distância do botão do topo da tela aqui */
-    right: 15px; /* Ajuste a distância do botão do lado direito da tela aqui */
+    left: 15px; /* Ajuste a distância do botão do lado direito da tela aqui */
     cursor: pointer;
   }
   
