@@ -181,6 +181,30 @@ body {
     
 }
 
+#mainnav ul {
+    list-style: none;
+  }
+  
+  #mainnav ul li {
+    padding:10px 15px;
+    background:#000000;
+  }
+  
+  .wrapper-menu {
+    position:relative;
+  }
+  
+  .dropdown {
+    position:absolute;
+    left:0;
+    display:none;
+  }
+  
+  .wrapper-dropdown:hover > .dropdown {
+    display:block;
+  }
+  
+
 
 
 
