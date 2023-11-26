@@ -185,7 +185,7 @@ body {
 
 
 .button {
-    width: 10px; /* Ajuste a largura do botão aqui */
+    width: 20px; /* Ajuste a largura do botão aqui */
     height: 20px; /* Ajuste a altura do botão aqui */
     position: absolute;
     top: 10px; /* Ajuste a distância do botão do topo da tela aqui */
@@ -196,7 +196,7 @@ body {
   .line {
     background-color: #000;
     height: 2px;
-    width: 90%;
+    width: 100%;
     position: absolute;
   }
   
