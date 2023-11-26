@@ -191,11 +191,11 @@ body {
     top: 15px; /* Ajuste a distância do botão do topo da tela aqui */
     left: 15px; /* Ajuste a distância do botão do lado direito da tela aqui */
     cursor: pointer;
-    background-color: #02446f;
+    
   }
   
   .line {
-    background-color: #ffffff;
+    background-color: #000000;
     height: 2px;
     width: 100%;
     position: absolute;
