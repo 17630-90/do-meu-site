@@ -215,7 +215,7 @@ body {
   .dropdown {
     position: absolute;
     display: none;
-    width: 80%;
+    width: 100%;
     top: 100%;
   }
   
