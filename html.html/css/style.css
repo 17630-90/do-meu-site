@@ -196,7 +196,7 @@ body {
   .line {
     background-color: #000;
     height: 2px;
-    width: 100%;
+    width: 90%;
     position: absolute;
   }
   
@@ -215,7 +215,7 @@ body {
   .dropdown {
     position: absolute;
     display: none;
-    width: 100%;
+    width: 80%;
     top: 100%;
   }
   
