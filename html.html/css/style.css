@@ -187,7 +187,8 @@ body {
   
   #mainnav ul li {
     padding:10px 15px;
-    background:#38383800;
+    background:#171717;
+    width: 150px; /* Define a largura do botão aqui */
   }
   
   .wrapper-menu {
@@ -198,6 +199,7 @@ body {
     position:absolute;
     left:0;
     display:none;
+    width: 100%; /* Faz com que o menu dropdown tenha a mesma largura do botão */
   }
   
   .wrapper-dropdown:hover > .dropdown {
