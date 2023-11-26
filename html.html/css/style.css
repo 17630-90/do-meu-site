@@ -200,7 +200,7 @@ body {
   }
   
   .line:nth-child(2) {
-    top: 50%;
+    top: 10%;
   }
   
   .line:nth-child(3) {
