@@ -181,10 +181,15 @@ body {
     
 }
 
+
+
+
 .button {
-    width: 50px;
-    height: 30px;
-    position: relative;
+    width: 30px; /* Ajuste a largura do botão aqui */
+    height: 20px; /* Ajuste a altura do botão aqui */
+    position: absolute;
+    top: 10px; /* Ajuste a distância do botão do topo da tela aqui */
+    right: 10px; /* Ajuste a distância do botão do lado direito da tela aqui */
     cursor: pointer;
   }
   
@@ -200,7 +205,7 @@ body {
   }
   
   .line:nth-child(2) {
-    top: 10%;
+    top: 50%;
   }
   
   .line:nth-child(3) {
