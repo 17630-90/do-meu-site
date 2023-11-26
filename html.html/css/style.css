@@ -186,10 +186,10 @@ body {
 
 .button {
     width: 25px; /* Ajuste a largura do botão aqui */
-    height: 20px; /* Ajuste a altura do botão aqui */
+    height: 23px; /* Ajuste a altura do botão aqui */
     position: absolute;
-    top: 15px; /* Ajuste a distância do botão do topo da tela aqui */
-    left: 15px; /* Ajuste a distância do botão do lado direito da tela aqui */
+    top: 20px; /* Ajuste a distância do botão do topo da tela aqui */
+    left: 20px; /* Ajuste a distância do botão do lado direito da tela aqui */
     cursor: pointer;
     
   }
