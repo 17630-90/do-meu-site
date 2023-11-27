@@ -1,6 +1,6 @@
 // JavaScript
 $(document).ready(function() {
     $('.search-icon').click(function() {
-        $('#search').focus();
+        $('#search').toggle();
     });
 });
