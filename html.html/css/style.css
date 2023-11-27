@@ -240,17 +240,19 @@ body {
     transition: width 0.4s linear;
 }
 
+.search-box .search-icon:hover + input[type="text"],
+.search-box input[type="text"]:hover,
 .search-box input[type="text"]:focus {
-    width: 100%;
+    display: block;
 }
 
-.search-box label.icon {
+.search-box .search-icon {
     position: absolute;
     right: 10px;
     top: 10px;
 }
 
-.search-box label.icon img {
+.search-box .search-icon img {
     width: 20px;
     height: 20px;
 }
