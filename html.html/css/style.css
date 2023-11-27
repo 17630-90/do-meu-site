@@ -237,7 +237,7 @@ body {
 }
 
 .search-box input[type="text"] {
-    display: none;
+    display: none; /* inicialmente escondido */
     width: 200px;
     transition: width 0.4s linear;
 }
@@ -246,12 +246,14 @@ body {
     position: absolute;
     right: 10px;
     top: 10px;
+    cursor: pointer; /* torna o ícone clicável */
 }
 
 .search-box .search-icon img {
     width: 30px;
     height: 20px;
 }
+
 
   
 
