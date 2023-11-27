@@ -85,12 +85,18 @@
         </div><!--center-->
     </section><!--sobre-->
   <script>
-    
+
     /* JavaScript */
-    document.querySelector('.search-icon').addEventListener('click', function() {
+document.querySelector('.search-icon').addEventListener('click', function(event) {
+    event.preventDefault(); // impede que o link seja seguido
     var input = document.querySelector('#search');
-    input.style.opacity = input.style.opacity === '0' ? '1' : '0'; // alterna entre mostrar e esconder
-         });
+    if (input.style.display === 'none' || input.style.display === '') {
+        input.style.display = 'block';
+    } else {
+        input.style.display = 'none';
+    }
+});
+
 
  </script>
    
