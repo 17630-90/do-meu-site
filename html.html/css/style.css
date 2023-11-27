@@ -243,7 +243,6 @@ body {
 }
 
 .search-box .search-icon:hover + input[type="text"],
-.search-box input[type="text"]:hover,
 .search-box input[type="text"]:focus {
     display: block;
 }
