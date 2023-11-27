@@ -229,8 +229,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  
-
   /* CSS */
 .search-box {
     position: relative;
@@ -242,11 +240,6 @@ body {
     transition: width 0.4s linear;
 }
 
-.search-box .search-icon:hover + input[type="text"],
-.search-box input[type="text"]:focus {
-    display: block;
-}
-
 .search-box .search-icon {
     position: absolute;
     right: 10px;
@@ -254,7 +247,7 @@ body {
 }
 
 .search-box .search-icon img {
-    width: 20px;
+    width: 25px;
     height: 20px;
 }
 
