@@ -1,5 +1,9 @@
 /* JavaScript */
 document.querySelector('.search-icon').addEventListener('click', function() {
-    var input = document.querySelector('.search-box input[type="text"]');
-    input.style.opacity = input.style.opacity === '0' ? '1' : '0'; // alterna entre mostrar e esconder
+    var input = document.querySelector('#search');
+    if (input.style.display === 'none') {
+        input.style.display = 'block';
+    } else {
+        input.style.display = 'none';
+    }
 });
