@@ -237,9 +237,9 @@ body {
 }
 
 .search-box input[type="text"] {
-    display: none; /* inicialmente escondido */
+    opacity: 0; /* inicialmente escondido */
     width: 200px;
-    transition: width 0.4s linear;
+    transition: opacity 0.4s linear;
 }
 
 .search-box .search-icon {
