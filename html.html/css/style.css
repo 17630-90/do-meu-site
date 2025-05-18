@@ -22,7 +22,7 @@ header {
     padding: 20px 0;
 }
 
-.logo a {
+.logo a{ 
     position: absolute;
     top: -180px;
     left: 65%;
@@ -30,7 +30,7 @@ header {
     width: 150%;
 }
 
-.logo {
+.logo  {
     position: absolute;
     top: 0;
     left: 0;
@@ -48,18 +48,19 @@ header {
     text-decoration: none;
     font-weight: bold;
     margin: 15px;
-    border-radius: 0px;
+    border: 1000px;
+    border-radius:0px;
     width: 180px;
     cursor: pointer;
 }
 
 .extras {
     position: relative;
-    bottom: 0;
+    bottom: -0px;
     right: -150px;
     width: 1300px;
     height: 100px;
-    border-radius: 50%;
+    border-radius:50% ;
 }
 
 .social-media {
@@ -90,19 +91,20 @@ header {
     text-align: center;
 }
 
-.texto-sobre p {
+.texto-sobre p{
     margin: 20px;
-    color: black;
-    font-size: 17px;
+    color:black;
+    font-size:17px;
     font-weight: bold;
     max-width: 1000px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.texto-sobre button {
-    background-color: rgb(68, 79, 164);
-    border-radius: 40px;
+.texto-sobre button{
+    border: 1000px;
+    background-color:rgb(68, 79, 164) ;
+    border-radius:40px;
     width: 180px;
     cursor: pointer;
     background-color: #0471b9;
@@ -113,6 +115,7 @@ header {
     display: inline-block;
     font-size: 18px;
     margin: 4px 2px;
+    cursor: pointer;
 }
 
 button:hover {
@@ -122,10 +125,11 @@ button:hover {
 body {
     background-image: url('');
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed;  
     background-size: cover;
 }
 
+/* Adiciona media query para telas menores (como celulares) */
 @media only screen and (max-width: 600px) {
     .center {
         flex-direction: column;
@@ -154,12 +158,115 @@ body {
     }
 }
 
+
 .container {
-    position: relative;
+    position: relative; /* Adiciona um contexto de posicionamento ao contêiner */
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background
+    background: black;
+}
+
+.container iframe {
+    position: absolute; /* Posiciona o iframe em relação ao contêiner */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    
+}
+
+
+
+
+.button {
+    width: 25px; /* Ajuste a largura do botão aqui */
+    height: 23px; /* Ajuste a altura do botão aqui */
+    position: absolute;
+    top: 20px; /* Ajuste a distância do botão do topo da tela aqui */
+    left: 20px; /* Ajuste a distância do botão do lado direito da tela aqui */
+    cursor: pointer;
+    
+  }
+  
+  .line {
+    background-color: #000000;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    
+  }
+  
+  .line:nth-child(1) {
+    top: 0;
+  }
+  
+  .line:nth-child(2) {
+    top: 50%;
+  }
+  
+  .line:nth-child(3) {
+    bottom: 0;
+  }
+  
+  .dropdown {
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 100%;
+  }
+  
+  .button:hover .dropdown {
+    display: block;
+  }
+
+  .dropdown a {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+
+  /* CSS */
+.search-box {
+    position: relative;
+}
+
+.search-box input[type="text"] {
+    opacity: 0; /* inicialmente escondido */
+    width: 200px;
+    transition: opacity 0.4s linear;
+}
+
+.search-box .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer; /* torna o ícone clicável */
+}
+
+.search-box .search-icon img {
+    width: 30px;
+    height: 20px;
+}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+  
