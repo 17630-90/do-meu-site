@@ -1,272 +1,166 @@
-* {
+/* Reset e base */
+/* Remove margens e preenchimento padrão dos navegadores e define a fonte base */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, sans-serif; /* Fonte padrão do site */
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
 }
 
-.center {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 2%;
+/* Barra de pesquisa */
+/* Container da barra de pesquisa fixado no canto superior direito */
+.search-container {
+    position: fixed; /* Fixa no lugar mesmo rolando a página */
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+    display: flex; /* Elementos lado a lado */
+    align-items: center; /* Alinhamento vertical centralizado */
+    z-index: 1000; /* Fica acima de outros elementos */
 }
 
-html, body {
-    height: 100%;
+/* Ícone de lupa */
+.search-icon img {
+    width: 24px; /* Largura da imagem da lupa */
+    height: 24px; /* Altura da imagem */
+    cursor: pointer; /* Cursor de clique */
+    margin-right: 8px; /* Espaço à direita da imagem */
 }
 
-header {
-    height: 100px;
-    padding: 20px 0;
+/* Campo de pesquisa escondido inicialmente */
+#search {
+    display: none; /* Começa oculto */
+    padding: 5px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 4px; /* Cantos arredondados */
+    font-size: 14px; /* Tamanho da fonte */
 }
 
-.logo a{ 
-    position: absolute;
-    top: -180px;
-    left: 65%;
-    transform: translateX(-50%);
-    width: 150%;
-}
-
-.logo  {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60%;
-}
-
-.menu {
-    padding-top: 30px;
-    width: 100%;
-    text-align: right;
-}
-
-.menu a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 15px;
-    border: 1000px;
-    border-radius:0px;
-    width: 180px;
-    cursor: pointer;
-}
-
-.extras {
-    position: relative;
-    bottom: -0px;
-    right: -150px;
-    width: 1300px;
-    height: 100px;
-    border-radius:50% ;
-}
-
-.social-media {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: left;
-    padding-top: 2px;
-    width: 101%;
-    text-align: right;
-}
-
-.social-media img {
-    display: block;
-    width: 30px;
-    margin: 20px 0;
-}
-
-.texto-sobre {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.texto-sobre h1 {
-    font-size: 50px;
-    text-align: center;
-}
-
-.texto-sobre p{
-    margin: 20px;
-    color:black;
-    font-size:17px;
-    font-weight: bold;
-    max-width: 1000px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.texto-sobre button{
-    border: 1000px;
-    background-color:rgb(68, 79, 164) ;
-    border-radius:40px;
-    width: 180px;
-    cursor: pointer;
-    background-color: #0471b9;
-    color: rgb(255, 255, 255);
-    padding: 0px 2px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #025307;
-}
-
-body {
-    background-image: url('');
-    background-repeat: no-repeat;
-    background-attachment: fixed;  
-    background-size: cover;
-}
-
-/* Adiciona media query para telas menores (como celulares) */
-@media only screen and (max-width: 600px) {
-    .center {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .logo {
-        width: 100%;
-    }
-
-    .menu {
-        text-align: center;
-    }
-
-    .extras {
-        width: 100%;
-    }
-
-    .social-media {
-        align-items: center;
-        justify-content: center;
-    }
-
-    .texto-sobre {
-        align-items: center;
-    }
-}
-
-
-.container {
-    position: relative; /* Adiciona um contexto de posicionamento ao contêiner */
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background: black;
-}
-
-.container iframe {
-    position: absolute; /* Posiciona o iframe em relação ao contêiner */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    
-}
-
-
-
-
+/* Botão hamburguer */
+/* Estilização do botão com as 3 linhas */
 .button {
-    width: 25px; /* Ajuste a largura do botão aqui */
-    height: 23px; /* Ajuste a altura do botão aqui */
-    position: absolute;
-    top: 20px; /* Ajuste a distância do botão do topo da tela aqui */
-    left: 20px; /* Ajuste a distância do botão do lado direito da tela aqui */
-    cursor: pointer;
-    
-  }
-  
-  .line {
-    background-color: #000000;
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    
-  }
-  
-  .line:nth-child(1) {
-    top: 0;
-  }
-  
-  .line:nth-child(2) {
-    top: 50%;
-  }
-  
-  .line:nth-child(3) {
-    bottom: 0;
-  }
-  
-  .dropdown {
-    position: absolute;
-    display: none;
-    width: 100%;
-    top: 100%;
-  }
-  
-  .button:hover .dropdown {
+    position: relative; /* Posição relativa para o menu dropdown */
+    margin: 20px; /* Espaço ao redor */
+    cursor: pointer; /* Cursor de clique */
+}
+
+/* As 3 linhas horizontais do botão */
+.line {
+    width: 30px; /* Largura da linha */
+    height: 4px; /* Altura da linha */
+    background-color: black; /* Cor preta */
+    margin: 6px 0; /* Espaço entre as linhas */
+}
+
+/* Menu dropdown escondido por padrão */
+.dropdown {
+    display: none; /* Começa escondido */
+    flex-direction: column; /* Alinha os links em coluna */
+    background-color: #f1f1f1; /* Cor de fundo clara */
+    position: absolute; /* Posicionamento em relação ao botão */
+    top: 40px; /* Distância do topo do botão */
+    left: 0; /* Alinhado à esquerda do botão */
+    z-index: 1; /* Fica acima de outros elementos */
+}
+
+/* Classe usada pelo JavaScript para mostrar o menu */
+.dropdown.show {
+    display: flex; /* Exibe o menu em coluna */
+}
+
+/* Estilo dos links dentro do dropdown */
+.dropdown a {
+    padding: 10px; /* Espaçamento interno */
+    text-decoration: none; /* Remove o sublinhado */
+    color: black; /* Cor do texto */
+    border-bottom: 1px solid #ccc; /* Linha divisória entre os links */
+}
+
+/* Efeito ao passar o mouse sobre os links do menu */
+.dropdown a:hover {
+    background-color: #ddd; /* Fundo cinza claro ao passar o mouse */
+}
+
+/* Cabeçalho */
+/* Seção do topo da página com logo e menu */
+header {
+    display: flex; /* Alinha os elementos lado a lado */
+    justify-content: space-between; /* Espaça entre logo e menu */
+    align-items: center; /* Alinha verticalmente */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #f5f5f5; /* Cor de fundo clara */
+    border-bottom: 20px solid #ccc; /* Linha separando o cabeçalho */
+}
+
+/* Logo no cabeçalho */
+.logo img {
+    height: 70px; /* Altura da imagem da logo */
+}
+
+/* Links do menu principal */
+.menu a {
+    margin: 0 10px; /* Espaçamento entre os links */
+    text-decoration: none; /* Remove sublinhado */
+    color: #333; /* Cor escura para os links */
+    position: relative; /* Necessário para posicionar a linha animada */
+}
+
+/* Linha animada que aparece embaixo dos links ao passar o mouse */
+.menu a::after {
+    content: ""; /* Elemento vazio criado para a linha */
     display: block;
-  }
-
-  .dropdown a {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-
-
-  /* CSS */
-.search-box {
-    position: relative;
+    width: 0; /* Começa com largura zero */
+    height: 2px; /* Espessura da linha */
+    background: #333; /* Cor da linha */
+    transition: width 0.3s; /* Animação de expansão */
+    position: absolute; /* Posicionamento em relação ao link */
+    bottom: -5px; /* Abaixo do texto do link */
+    left: 0; /* Começa no canto esquerdo */
 }
 
-.search-box input[type="text"] {
-    opacity: 0; /* inicialmente escondido */
-    width: 200px;
-    transition: opacity 0.4s linear;
+/* Quando o mouse passa sobre o link, a linha se expande */
+.menu a:hover::after {
+    width: 100%; /* A linha se estende por todo o link */
 }
 
-.search-box .search-icon {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    cursor: pointer; /* torna o ícone clicável */
+/* Seção Sobre */
+/* Área com informações sobre você ou seu trabalho */
+.sobre {
+    padding: 80px 20px; /* Espaçamento interno grande */
+    background-color: #fff; /* Fundo branco */
 }
 
-.search-box .search-icon img {
-    width: 30px;
-    height: 20px;
+/* Seção de elementos extras como redes sociais */
+.extras {
+    display: flex; /* Elementos lado a lado */
+    justify-content: center; /* Centralizados horizontalmente */
+    margin-bottom: 10px; /* Espaçamento inferior */
 }
 
+/* Ícones das redes sociais */
+.social-media a img {
+    width: 45px; /* Tamanho dos ícones */
+    margin: 0 30px; /* Espaçamento entre eles */
+}
 
-  
+/* Texto dentro da seção Sobre */
+.texto-sobre {
+    max-width: 700px; /* Largura máxima do texto */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+}
 
+/* Estilo dos botões */
+button {
+    padding: 10px 20px; /* Espaçamento interno (vertical e horizontal) */
+    background-color: cornflowerblue; /* Cor azul clara */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    color: white; /* Cor do texto */
+    font-size: 16px; /* Tamanho do texto */
+    cursor: pointer; /* Cursor de clique */
+}
 
-
-
-
-
-
-
-
-
-
- 
-  
-  
+/* Efeito ao passar o mouse no botão */
+button:hover {
+    background-color: rgb(12, 100, 46); /* Azul mais escuro ao passar o mouse */
+}
