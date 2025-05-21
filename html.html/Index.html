@@ -1,112 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SG</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/mark.js/dist/jquery.mark.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SG</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
+<body>
 
 <!-- Botão do menu hambúrguer -->
 <div class="button" id="menu-toggle">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="dropdown" id="dropdown-menu">
-        <a href="https://adobe.ly/3sWl4Pm" target="_blank">Casamentos</a>
-        <a href="https://adobe.ly/3FrM8Zx" target="_blank">Formatura</a>
-        <a href="https://drive.google.com/drive/folders/1cnRCYdm1yabrhgJNTKf0ehSgOh54ahi9" target="_blank">Aniversários</a>
-        <a href="https://adobe.ly/3Slp2vu" target="_blank">Temáticos</a>
-    </div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="dropdown" id="dropdown-menu">
+    <a href="https://adobe.ly/3sWl4Pm" target="_blank">Casamentos</a>
+    <a href="https://adobe.ly/3FrM8Zx" target="_blank">Formatura</a>
+    <a href="https://drive.google.com/drive/folders/1cnRCYdm1yabrhgJNTKf0ehSgOh54ahi9" target="_blank">Aniversários</a>
+    <a href="https://adobe.ly/3Slp2vu" target="_blank">Temáticos</a>
+  </div>
 </div>
 
-<!-- Script para alternar visibilidade -->
-<script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const dropdown = document.getElementById('dropdown-menu');
+<!-- Cabeçalho -->
+<header>
+  <div class="logo">
+    <a href="Index.html" target="_blank">
+      <img src="20230425_235201_0000.png" alt="logo"/>
+    </a>
+  </div>
 
-  toggleBtn.addEventListener('click', (e) => {
-    dropdown.classList.toggle('show');
-    e.stopPropagation(); // Impede que o clique feche o menu
+  <div class="center">
+    <nav class="menu">
+      <a href="Index.html">Home</a>
+      <a href="Portifolio.html" target="_blank">Portifolio</a>
+      <a href="http://open.spotify.com/artist/0SMqFL5vIzK3IB7yqSTX4L" target="_blank">Spotify</a>
+      <a href="#" target="_blank">Sobre</a>
+    </nav>
+  </div>
+
+  <!-- Barra de Pesquisa -->
+  <div class="search-container">
+    <a href="#" class="search-icon">
+      <img src="png-transparent-magnifying-glass-computer-icons-magnification-white-lense-glass-magnifier-zooming-user-interface.png" alt="Pesquisa" />
+    </a>
+    <form id="searchForm" style="display: none;">
+      <input type="text" id="searchInput" placeholder="Digite para pesquisar..." />
+    </form>
+  </div>
+</header>
+
+<!-- RESULTADOS DE BUSCA -->
+<div id="searchResults" style="padding: 20px; font-family: sans-serif;"></div>
+
+<!-- Seção Sobre -->
+<section class="sobre">
+  <div class="extras">
+    <div class="social-media">
+      <a href="https://www.facebook.com/samuelcantaoficial/" target="_blank"><img src="facebook.png" alt="Facebook"/></a>
+      <a href="https://www.instagram.com/samuelcantaoficial/?hl=pt_BR" target="_blank"><img src="instagram.png" alt="Instagram"/></a>
+      <a href="https://www.youtube.com/@SamuelCantao" target="_blank"><img src="youtube.png" alt="YouTube"/></a>
+    </div>
+  </div>
+  <div class="center">
+    <div class="texto-sobre">
+      <h1>Seja Bem Vindo<br/> À minha Página <span style="color: cornflowerblue;">Portifolio</span> SG Fotografia</h1>
+      <p>Samuel Garcia, conhecido pela marca SG Fotografia, é um fotógrafo talentoso que tem a habilidade de capturar momentos únicos através de sua lente...
+      </p>
+      <a href="https://sites.google.com/view/sgfotografias/home" target="_blank">
+        <button>Saiba Mais</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Scripts -->
+<script>
+  // Alternar menu hambúrguer
+  const toggleBtn = document.getElementById('menu-toggle');
+  const dropdownMenu = document.getElementById('dropdown-menu');
+
+  toggleBtn.addEventListener('click', function () {
+    dropdownMenu.classList.toggle('show');
+  });
+
+  // Mostrar/ocultar campo de busca
+  document.querySelector('.search-icon').addEventListener('click', function(event) {
+    event.preventDefault();
+    const form = document.getElementById('searchForm');
+    form.style.display = (form.style.display === 'none') ? 'block' : 'none';
+    document.getElementById('searchInput').focus();
+  });
+
+  // Dados simulando páginas internas
+  const siteData = [
+    { title: "Casamentos", url: "https://adobe.ly/3sWl4Pm", keywords: ["casamento", "noiva", "festa"] },
+    { title: "Formatura", url: "https://adobe.ly/3FrM8Zx", keywords: ["formatura", "colação", "turma"] },
+    { title: "Aniversários", url: "https://drive.google.com/drive/folders/1cnRCYdm1yabrhgJNTKf0ehSgOh54ahi9", keywords: ["aniversário", "festa", "bolo"] },
+    { title: "Temáticos", url: "https://adobe.ly/3Slp2vu", keywords: ["temático", "ensaio", "tema"] },
+    { title: "Sobre", url: "#", keywords: ["biografia", "quem sou", "fotógrafo"] }
+  ];
+
+  // Função de busca
+  document.getElementById("searchForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const query = document.getElementById("searchInput").value.toLowerCase();
+    const resultsDiv = document.getElementById("searchResults");
+    resultsDiv.innerHTML = ""; // Limpa resultados anteriores
+
+    const results = siteData.filter(item =>
+      item.title.toLowerCase().includes(query) ||
+      item.keywords.some(keyword => keyword.toLowerCase().includes(query))
+    );
+
+    if (results.length > 0) {
+      results.forEach(result => {
+        const link = document.createElement("a");
+        link.href = result.url;
+        link.textContent = result.title;
+        link.target = "_blank";
+        link.style.display = "block";
+        link.style.marginBottom = "10px";
+        resultsDiv.appendChild(link);
+      });
+    } else {
+      resultsDiv.textContent = "Nenhum resultado encontrado.";
+    }
   });
 </script>
-
-
-<!-- JavaScript (deve ser incluído antes do </body>) -->
-<script>
-    const toggleBtn = document.getElementById('menu-toggle');
-    const dropdownMenu = document.getElementById('dropdown-menu');
-
-    toggleBtn.addEventListener('click', function () {
-        dropdownMenu.classList.toggle('show');
-    });
-</script>
-
-
-
-
-<body>
-    <!-- Barra de Pesquisa no canto superior direito -->
-    <div class="search-container">
-        <a href="#" class="search-icon">
-            <img src="png-transparent-magnifying-glass-computer-icons-magnification-white-lense-glass-magnifier-zooming-user-interface.png" alt="Pesquisa" />
-        </a>
-        <input type="text" id="search" placeholder="Digite para pesquisar..." />
-    </div>
-
-    
-
-    <!-- Cabeçalho -->
-    <header>
-        <div class="logo">
-            <a href="Index.html" target="_blank">
-                <img src="20230425_235201_0000.png" alt="logo"/>
-            </a>
-        </div>
-
-        <div class="center">
-            <nav class="menu">
-                <a href="Index.html">Home</a>
-                <a href="Portifolio.html" target="_blank">Portifolio</a>
-                <a href="http://open.spotify.com/artist/0SMqFL5vIzK3IB7yqSTX4L" target="_blank">Spotify</a>
-                <a href="#" target="_blank">Sobre</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Seção Sobre -->
-    <section class="sobre">
-        <div class="extras">
-            <div class="social-media">
-                <a href="https://www.facebook.com/samuelcantaoficial/" target="_blank"><img src="facebook.png" alt="Facebook"/></a>
-                <a href="https://www.instagram.com/samuelcantaoficial/?hl=pt_BR" target="_blank"><img src="instagram.png" alt="Instagram"/></a>
-                <a href="https://www.youtube.com/@SamuelCantao" target="_blank"><img src="youtube.png" alt="YouTube"/></a>
-            </div>
-        </div>
-        <div class="center">
-            <div class="texto-sobre">
-                <h1>Seja Bem Vindo<br/> À minha Página <span style="color: cornflowerblue;">Portifolio</span> SG Fotografia</h1>
-                <p>Samuel Garcia, conhecido pela marca SG Fotografia, é um fotógrafo talentoso que tem a habilidade de capturar momentos únicos através de sua lente. Sua paixão pela fotografia começou em uma idade jovem e desde então, ele tem se dedicado a aprimorar suas habilidades e aperfeiçoar sua arte.
-                <br><br>
-                Samuel é conhecido por sua habilidade de capturar a beleza e a emoção em cada foto que tira. Seu trabalho é uma mistura de criatividade e técnica, resultando em imagens que são ao mesmo tempo impressionantes e comoventes.
-                <br><br>
-                A marca SG Fotografia é sinônimo de qualidade e profissionalismo. Samuel se orgulha de oferecer aos seus clientes um serviço excepcional, garantindo que cada foto seja perfeita em todos os detalhes.</p>
-
-                <a href="https://sites.google.com/view/sgfotografias/home" target="_blank">
-                    <button>Saiba Mais</button>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        document.querySelector('.search-icon').addEventListener('click', function(event) {
-            event.preventDefault();
-            var input = document.querySelector('#search');
-            input.style.display = (input.style.display === 'block') ? 'none' : 'block';
-        });
-    </script>
 </body>
 </html>
-
