@@ -11,7 +11,7 @@ body, html {
 /* Container da barra de pesquisa fixado no canto superior direito */
 .search-container {
     position: fixed; /* Fixa no lugar mesmo rolando a página */
-    top: 10px; /* Distância do topo */
+    top: 17px; /* Distância do topo */
     right: 10px; /* Distância da direita */
     display: flex; /* Elementos lado a lado */
     align-items: center; /* Alinhamento vertical centralizado */
@@ -20,8 +20,8 @@ body, html {
 
 /* Ícone de lupa */
 .search-icon img {
-    width: 24px; /* Largura da imagem da lupa */
-    height: 24px; /* Altura da imagem */
+    width: 35px; /* Largura da imagem da lupa */
+    height: 34px; /* Altura da imagem */
     cursor: pointer; /* Cursor de clique */
     margin-right: 8px; /* Espaço à direita da imagem */
 }
@@ -29,10 +29,10 @@ body, html {
 /* Campo de pesquisa escondido inicialmente */
 #search {
     display: none; /* Começa oculto */
-    padding: 5px; /* Espaçamento interno */
-    border: 1px solid #ccc; /* Borda cinza clara */
+    padding: 20px; /* Espaçamento interno */
+    border: 2px solid #ccc; /* Borda cinza clara */
     border-radius: 4px; /* Cantos arredondados */
-    font-size: 14px; /* Tamanho da fonte */
+    font-size: 17px; /* Tamanho da fonte */
 }
 
 /* Botão hamburguer */
@@ -55,7 +55,7 @@ body, html {
 .dropdown {
     display: none; /* Começa escondido */
     flex-direction: column; /* Alinha os links em coluna */
-    background-color: #f1f1f1; /* Cor de fundo clara */
+    background-color: #679cff; /* Cor de fundo clara */
     position: absolute; /* Posicionamento em relação ao botão */
     top: 40px; /* Distância do topo do botão */
     left: 0; /* Alinhado à esquerda do botão */
@@ -77,7 +77,7 @@ body, html {
 
 /* Efeito ao passar o mouse sobre os links do menu */
 .dropdown a:hover {
-    background-color: #ddd; /* Fundo cinza claro ao passar o mouse */
+    background-color: #108600fa; /* Fundo cinza claro ao passar o mouse */
 }
 
 /* Cabeçalho */
