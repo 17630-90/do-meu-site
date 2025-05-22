@@ -10,7 +10,7 @@
 
    
 <!-- Botão do menu hambúrguer -->
-<div class="button" id="menu-toggle">
+<div class="hamburguer" id="hamburguer">
   <div class="line"></div>
   <div class="line"></div>
   <div class="line"></div>
@@ -23,14 +23,8 @@
 </div>
 
 <!-- Cabeçalho -->
-<header>
-  <div class="logo">
-    <a href="Index.html" target="_blank">
-      <img src="logo nova.svg" alt="logo"/>
-    </a>
-  </div>
 
-  <div class="center">
+<div class="center" id="center">
     <nav class="menu">
       <a href="Index.html">Home</a>
       <a href="Portifolio.html" target="_blank">Portifolio</a>
@@ -39,6 +33,8 @@
     </nav>
   </div>
 
+
+<header>
   <!-- Barra de Pesquisa -->
   <div class="search-container">
     <a href="#" class="search-icon">
@@ -53,20 +49,18 @@
 <!-- RESULTADOS DE BUSCA -->
 <div id="searchResults" style="padding: 20px; font-family: sans-serif;"></div>
 
-<!-- Seção com fundo continua intacta -->
-<!-- Seção Sobre -->
-<section class="sobre">
-  <div class="center">
-    <div class="texto-sobre">
+
+<div class="texto-sobre" id="texto-sobre">
       <h1>Seja Bem Vindo<br/> À minha Página <span style="color: cornflowerblue;">Portifolio</span> SG Fotografia</h1>
       <p>Samuel Garcia, conhecido pela marca SG Fotografia, é um fotógrafo talentoso que tem a habilidade de capturar momentos únicos através de sua lente...
       </p>
-      <a href="https://sites.google.com/view/sgfotografias/home" target="_blank">
-        <button>Saiba Mais</button>
-      </a>
-    </div>
-  </div>
-</section>
+</div>
+
+<!-- Seção com fundo continua intacta -->
+<!-- Seção Sobre -->
+
+
+
 
 <!-- Ícones agora são independentes -->
 <div class="social-media" id="arrastavel">
@@ -162,5 +156,19 @@
     }
   });
 </script>
+
+<div class="botao" id="botao">
+    <a href="https://sites.google.com/view/sgfotografias/home" target="_blank">
+        <button>Saiba Mais</button>
+      </a>
+</div>
+
+
+<div class="logo" id="logo">
+    <a href="Index.html" target="_blank">
+      <img src="logo nova.svg" alt="logo"/>
+    </a>
+  </div>
+
 </body>
 </html>
