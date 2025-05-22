@@ -139,18 +139,23 @@ header {
 .sobre {
     padding: 100px 30px; /* Espaçamento interno grande */
     background-color: #ffffffc7; /* Fundo branco */
+    top: 100px;
+    right: 20px;
+    cursor: move;
+    z-index: 9999;
+
 }
 
 /* Seção de elementos extras como redes sociais */
 .social-media a {
   display: block;         /* Coloca os links um embaixo do outro */
   margin-bottom: 20px;    /* Espaçamento entre os links */
-  text-align: center;     /* Centraliza o conteúdo (imagem) */
 }
 
 .social-media img {
   width: 40px;            /* Ajusta o tamanho dos ícones */
   height: auto;
+  
 }
 
 
