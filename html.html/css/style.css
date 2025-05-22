@@ -21,7 +21,7 @@ body {
     margin: 0;
 }
 
-body[] {
+body {
     direction: ltr;
 }
 user agent stylesheet
@@ -270,6 +270,65 @@ button:hover {
     position: fixed; /* Fixa na tela */
 }
 
+
+
+
+
+.galeria-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.titulo-galeria {
+  font-size: 26px;
+  text-align: left;
+  color: #333;
+  margin: 40px 0 20px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+}
+
+.linha-caixas {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.caixa-foto {
+  flex: 1;
+  min-width: 200px;
+  max-width: 30%;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.caixa-foto:hover {
+  transform: scale(1.03);
+}
+
+.caixa-foto img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
 /* MEDIA QUERIES - AJUSTES EM TELAS PEQUENAS */
 /* Mecher tamanho celular */
 
@@ -402,7 +461,7 @@ button:hover {
 
     .logo img {
         width: 60vw; /* Diminui logo */
-        top: -1025px;
+        top: -1950px;
         position: relative;
         left: -22px;
         
