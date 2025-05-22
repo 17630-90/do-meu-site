@@ -5,11 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SG Fotografia</title>
   <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    .social-media {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+      max-width: 50px;
+    }
+
+    .social-media img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .social-media img:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
 
-   
-<!-- Botão do menu hambúrguer -->
 <!-- Botão do menu hambúrguer -->
 <div class="hamburguer" id="hamburguer">
   <div class="line"></div>
@@ -25,18 +52,15 @@
   <a href="https://adobe.ly/3Slp2vu" target="_blank">Temáticos</a>
 </div>
 
-
 <!-- Cabeçalho -->
-
 <div class="center" id="center">
-    <nav class="menu">
-      <a href="Index.html">HOME</a>
-      <a href="Portifolio.html" target="_blank">PORTIFÓLIO</a>
-      <a href="http://open.spotify.com/artist/0SMqFL5vIzK3IB7yqSTX4L" target="_blank">SPOTIFY</a>
-      <a href="Sobre.html" target="_blank">+</a>
-    </nav>
-  </div>
-
+  <nav class="menu">
+    <a href="Index.html">HOME</a>
+    <a href="Portifolio.html" target="_blank">PORTIFÓLIO</a>
+    <a href="http://open.spotify.com/artist/0SMqFL5vIzK3IB7yqSTX4L" target="_blank">SPOTIFY</a>
+    <a href="Sobre.html" target="_blank">+</a>
+  </nav>
+</div>
 
 <header>
   <!-- Barra de Pesquisa -->
@@ -53,19 +77,13 @@
 <!-- RESULTADOS DE BUSCA -->
 <div id="searchResults" style="padding: 20px; font-family: sans-serif;"></div>
 
-
 <div class="texto-sobre" id="texto-sobre">
-      <h1>Seja Bem Vindo<br/> À minha Página <span style="color: cornflowerblue;">Portifolio</span> SG Fotografia</h1>
-      <p>Samuel Garcia, conhecido pela marca SG Fotografia, <br/> é um fotógrafo talentoso que tem a habilidade de capturar momentos únicos através de sua lente...
-      </p>
+  <h1>Seja Bem Vindo<br/> À minha Página <span style="color: cornflowerblue;">Portifolio</span> SG Fotografia</h1>
+  <p>Samuel Garcia, conhecido pela marca SG Fotografia, <br/> é um fotógrafo talentoso que tem a habilidade de capturar momentos únicos através de sua lente...</p>
 </div>
 
-
 <!-- Galeria de Fotos -->
-
 <div class="galeria-container">
-  
-  <!-- Linha 1: Estúdio -->
   <h2 class="titulo-galeria">Estúdio</h2>
   <div class="linha-caixas">
     <div class="caixa-foto"><img src="IMG_0998.jpg" alt="Foto Estúdio 1" /></div>
@@ -73,7 +91,6 @@
     <div class="caixa-foto"><img src="IMG_2012.jpg" alt="Foto Estúdio 3" /></div>
   </div>
 
-  <!-- Linha 2: Ao Ar Livre -->
   <h2 class="titulo-galeria">Ao Ar Livre</h2>
   <div class="linha-caixas">
     <div class="caixa-foto"><img src="IMG_2013.jpg" alt="Foto Ar Livre 1" /></div>
@@ -81,24 +98,15 @@
     <div class="caixa-foto"><img src="IMG_2016.jpg" alt="Foto Ar Livre 3" /></div>
   </div>
 
-  <!-- Linha 3: Eventos -->
   <h2 class="titulo-galeria">Eventos</h2>
   <div class="linha-caixas">
     <div class="caixa-foto"><img src="IMG_2016-2.jpg" alt="Evento 1" /></div>
     <div class="caixa-foto"><img src="IMG_0998.jpg" alt="Evento 2" /></div>
     <div class="caixa-foto"><img src="IMG_2011.jpg" alt="Evento 3" /></div>
   </div>
-
 </div>
 
-
-<!-- Seção com fundo continua intacta -->
-<!-- Seção Sobre -->
-
-
-
-
-<!-- Ícones agora são independentes -->
+<!-- Ícones redes sociais -->
 <div class="social-media" id="arrastavel">
   <a href="https://www.facebook.com/samuelcantaoficial/" target="_blank">
     <img src="facebook.png" alt="Facebook"/>
@@ -108,9 +116,10 @@
   </a>
   <a href="https://www.youtube.com/@SamuelCantao" target="_blank">
     <img src="youtube.png" alt="YouTube"/>
-  </a>
+  </a>
 </div>
-<!-- Scripts das logos ds redes -->
+
+<!-- Script de arrasto -->
 <script>
   const el = document.getElementById("arrastavel");
   let isDragging = false;
@@ -136,9 +145,8 @@
   });
 </script>
 
-<!-- Scripts menu hambúrguer -->
+<!-- Scripts menu hambúrguer e busca -->
 <script>
-  // Alternar menu hambúrguer
   const toggleBtn = document.getElementById('hamburguer');
   const dropdownMenu = document.getElementById('dropdown-menu');
 
@@ -146,7 +154,6 @@
     dropdownMenu.classList.toggle('show');
   });
 
-  // Mostrar/ocultar campo de busca
   document.querySelector('.search-icon').addEventListener('click', function(event) {
     event.preventDefault();
     const form = document.getElementById('searchForm');
@@ -154,9 +161,6 @@
     document.getElementById('searchInput').focus();
   });
 
-  
-
-  // Dados simulando páginas internas
   const siteData = [
     { title: "Casamentos", url: "https://adobe.ly/3sWl4Pm", keywords: ["casamento", "noiva", "festa"] },
     { title: "Formatura", url: "https://adobe.ly/3FrM8Zx", keywords: ["formatura", "colação", "turma"] },
@@ -165,12 +169,11 @@
     { title: "Sobre", url: "#", keywords: ["biografia", "quem sou", "fotógrafo"] }
   ];
 
-  // Função de busca
   document.getElementById("searchForm").addEventListener("submit", function (e) {
     e.preventDefault();
     const query = document.getElementById("searchInput").value.toLowerCase();
     const resultsDiv = document.getElementById("searchResults");
-    resultsDiv.innerHTML = ""; // Limpa resultados anteriores
+    resultsDiv.innerHTML = "";
 
     const results = siteData.filter(item =>
       item.title.toLowerCase().includes(query) ||
@@ -194,17 +197,16 @@
 </script>
 
 <div class="botao" id="botao">
-    <a href="https://sites.google.com/view/sgfotografias/home" target="_blank">
-        <button>Saiba Mais</button>
-      </a>
+  <a href="https://sites.google.com/view/sgfotografias/home" target="_blank">
+    <button>Saiba Mais</button>
+  </a>
 </div>
 
-
 <div class="logo" id="logo">
-    <a href="Index.html" target="_blank">
-      <img src="logo nova.svg" alt="logo"/>
-    </a>
-  </div>
+  <a href="Index.html" target="_blank">
+    <img src="logo nova.svg" alt="logo"/>
+  </a>
+</div>
 
 </body>
 </html>

@@ -1,312 +1,135 @@
-/* RESET E BASE */
-
-body, html {
-    margin: 0; /* Remove margens padrão dos navegadores */
-    padding: 0; /* Remove espaçamentos internos padrão */
-    font-family: sans-serif; /* Define a fonte base do site */
-    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho total do elemento */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Corpo da página */
 body {
-    background-image: url('fundo pagina.jpg'); /* Define imagem de fundo */
-    background-size: cover; /* Faz a imagem cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-    background-attachment: fixed; /* Faz o fundo ficar fixo ao rolar a página */
-    height: 100%;
-    padding: 0
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
 }
 
-body {
-    margin: 0;
+/* Menu de navegação */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background-color: #f5f5f5;
 }
 
-body {
-    direction: ltr;
-}
-user agent stylesheet
-[dir="ltr" i] {
-    unicode-bidi: isolate;
-}
-user agent stylesheet
-body {
-    display: block;
-    margin: 8px;
-}
-html {
-    font-size: 16px;
-}
-html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
 }
 
-/* BARRA DE PESQUISA */
-
-.search-container {
-    position: fixed; /* Fixa o container na tela */
-    top: 1px; /* Distância do topo */
-    right: 9px; /* Distância da direita */
-    display: flex; /* Coloca os elementos lado a lado */
-    align-items: center; /* Alinha verticalmente ao centro */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
+.menu a:hover {
+  color: cornflowerblue;
 }
 
-.search-icon img {
-    width: 8vw; /* Largura relativa à largura da tela */
-    max-width: 60px; /* Limite máximo de largura */
-    height: auto; /* Altura proporcional */
-    cursor: pointer; /* Mostra o cursor de clique */
-    margin-right: 8px; /* Espaço à direita da imagem */
+/* Menu hamburguer */
+.hamburguer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1000;
 }
 
-#search {
-    display: none; /* Começa oculto */
-    padding: 20px; /* Espaço interno */
-    border: 2px solid #ccc; /* Borda cinza clara */
-    border-radius: 4px; /* Cantos arredondados */
-    font-size: 17px; /* Tamanho do texto */
+.hamburguer .line {
+  width: 30px;
+  height: 3px;
+  background: #333;
+  margin: 6px 0;
 }
 
-/* BOTÃO HAMBÚRGUER */
-
-.button {
-    position: relative; /* Base para o dropdown */
-    margin: 2vw; /* Espaço em volta */
-    top: -75px;
-    position: relative;
-    left: 300px;
-    background-color: #ff0202; /* Fundo azul */  
-    width: 60px; /* Diminui logo */
-    
-    cursor: pointer; /* Cursor de clique */
-}
-
-.botao a{
-
-background-color: #ff0202; /* Fundo azul */
-
-}
-
-.line {
-    width: 7vw; /* Largura proporcional à tela */
-    max-width: 30px; /* Limite máximo */
-    height: 4px; /* Espessura da linha */
-    background-color: black; /* Cor preta */
-    margin: 6px 0; /* Espaço entre as linhas */
-}
-
-/* MENU DROPDOWN */
-
+/* Dropdown */
 .dropdown {
-    display: none; /* Começa oculto */
-    flex-direction: column; /* Organiza itens verticalmente */
-    position: absolute; /* Posição relativa ao botão */
-    top: 80px; /* Distância do topo */
-    left: 60px; /* Distância da esquerda */
-    background-color: #679cff; /* Fundo azul */
-    padding: 10px; /* Espaço interno */
-    border-radius: 5px; /* Bordas arredondadas */
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Sombra */
-    z-index: 999; /* Acima de outros elementos */
-}
-
-.dropdown.show {
-    display: flex; /* Torna o menu visível e em coluna */
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
 }
 
 .dropdown a {
-    color: black; /* Cor do texto */
-    text-decoration: none; /* Remove sublinhado */
-    padding: 8px 12px; /* Espaçamento interno */
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.3s;
 }
 
 .dropdown a:hover {
-    background-color: #fffffffa; /* Fundo branco translúcido ao passar o mouse */
+  background-color: #eee;
 }
 
-/* CABEÇALHO */
-
-header {
-    display: flex; /* Elementos lado a lado */
-    justify-content: space-between; /* Espaço entre logo e menu */
-    align-items: center; /* Alinha verticalmente */
-    padding: 2vw; /* Espaço interno relativo */
-    background-color: #f5f5f5; /* Cor de fundo */
-    border-bottom: 5px solid #ccc; /* Linha inferior */
+.dropdown.show {
+  display: flex;
 }
 
-.center {
-    display: flex; /* Lado a lado */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Alinha verticalmente */
-    padding: 2vw; /* Espaço interno */
-    background-color: #f5f5f5; /* Fundo claro */
+/* Logo */
+.logo {
+  text-align: center;
+  margin-top: 30px;
 }
 
-/* LINKS DO MENU */
-
-.menu a {
-    margin: 0 2vw; /* Espaço horizontal entre os links */
-    text-decoration: none; /* Remove sublinhado */
-    color: #333; /* Cor do texto */
-    position: relative; /* Para animar a linha embaixo */
-    font-size: 4vw; /* Tamanho do texto relativo */
-    max-font-size: 23px; /* Tamanho máximo */
-    text-shadow: 2px 2px 4px rgba(255, 52, 2, 0.2); /* Sombra leve no texto */
+.logo img {
+  width: 200px;
+  max-width: 80%;
 }
 
-.menu a::after {
-    content: ""; /* Elemento vazio para linha animada */
-    display: block;
-    width: 0; /* Começa invisível */
-    height: 2px; /* Espessura da linha */
-    background: #333; /* Cor da linha */
-    transition: width 0.3s; /* Animação de crescimento */
-    position: absolute; /* Posicionado embaixo do link */
-    bottom: -5px; /* Um pouco abaixo do texto */
-    left: 0; /* Começa da esquerda */
-}
-
-.menu a:hover::after {
-    width: 100%; /* Linha ocupa toda a largura ao passar o mouse */
-}
-
-/* BOTÃO "SAIBA MAIS" */
-
-.botao {
-    margin-top: 5vw; /* Espaço acima do botão */
-    padding: 2.5vw 3vw; /* Espaço interno */
-    font-size: 50vw; /* Tamanho do texto */
-    border-radius: 7px; /* Bordas arredondadas */
-    display: inline-block;
-    font-weight: bold;
-    position: fixed; /* Fixa na tela */
-    top: 70vh; /* Distância do topo da tela */
-    left: 70vw; /* Distância da esquerda */
-    background-color: rgb(90, 0, 0); /* Cor do botão */
-    border: none; /* Remove borda */
-    color: white; /* Cor do texto */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra no texto */
-}
-
-/* SEÇÃO SOBRE */
-
+/* Texto de introdução */
 .texto-sobre {
-    padding: 4vw; /* Espaço interno */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra no texto */
-    position: relative;
-    top: 5vh; /* Distância do topo da página */
-    left: auto;
-    display: block;
-    max-width: 50vw; /* Largura máxima */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    text-align: center; /* Centraliza o texto */
+  text-align: center;
+  padding: 40px 20px;
 }
 
 .texto-sobre h1 {
-    font-size: 6vw; /* Título grande */
-    max-font-size: 40px; /* Tamanho máximo */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .texto-sobre p {
-    font-size: 4vw; /* Parágrafo com fonte responsiva */
-    max-font-size: 16px; /* Tamanho máximo */
+  font-size: 1.2rem;
+  color: #555;
 }
 
-/* LINKS ARRÁSTAVEIS (REDES SOCIAIS?) */
-
-#arrastavel {
-    position: relative;
-    top: -50vh; /* Distância do topo */
-    left: 90vw;
-    z-index: 9999; /* Fica sobre tudo */
-    cursor: move; /* Indica que é arrastável */
-}
-
-#arrastavel img {
-    width: 8vw; /* Tamanho relativo */
-    max-width: 42px; /* Tamanho máximo */
-    height: auto;
-}
-
-/* ÍCONE DO MENU HAMBÚRGUER */
-
-.hamburguer {
-    width: 40vw; /* Tamanho responsivo */
-    max-width: 40px;
-    cursor: pointer;
-    position: fixed; /* Fixo na tela */
-    top: -20vh;
-    left: 30vw;
-    z-index: 1000;
-}
-
-/* LINHAS DO HAMBÚRGUER */
-
-.line {
-    width: 10vw;
-    max-width: 37px;
-    height: 4px;
-    background-color: black;
-    margin: 6px 0;
-}
-
-/* BOTÃO AO PASSAR O MOUSE */
-
-button:hover {
-    background-color: white; /* Muda para branco ao passar o mouse */
-}
-
-/* LOGO FIXA NO TOPO */
-
-.logo img {
-    width: 60vw; /* Tamanho responsivo */
-    max-width: 470px;
-    height: auto;
-    top: -10vh; /* Levemente acima do topo visível */
-    left: 0;
-    position: fixed; /* Fixa na tela */
-}
-
-
-
-
-
+/* Galeria */
 .galeria-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 0 20px;
+  padding: 40px 20px;
 }
 
 .titulo-galeria {
-  font-size: 26px;
-  text-align: left;
-  color: #333;
+  text-align: center;
   margin: 40px 0 20px;
-  font-weight: bold;
-  font-family: 'Arial', sans-serif;
+  font-size: 1.8rem;
+  color: cornflowerblue;
 }
 
 .linha-caixas {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  justify-content: center;
+  gap: 15px;
 }
 
 .caixa-foto {
-  flex: 1;
-  min-width: 200px;
+  flex: 1 1 30%;
   max-width: 30%;
   background-color: #f9f9f9;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
   transition: transform 0.3s ease;
 }
 
@@ -318,213 +141,106 @@ button:hover {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
 }
 
-
-
-
-
-
-
-
-
-
-/* MEDIA QUERIES - AJUSTES EM TELAS PEQUENAS */
-/* Mecher tamanho celular */
-
-@media (max-width: 768px) {
-    .menu a {
-        top: 25px;
-        position: relative;
-        left: 60px;
-        
-        font-size: 14px; /* Diminui tamanho dos links */
-    }
-
-    .texto-sobre h1 {
-        top: -9vh;
-        position: relative;
-        left: 0px;
-        font-size: 30px; /* Diminui título */
-    }
-
-    .texto-sobre p {
-        top: -6vh;
-        position: relative;
-        left: 0px;
-        font-size: 22px; /* Diminui título */
-    }
-
-    .botao {
-        top: -5vh; /* Reposiciona botão */
-        left: 30vw;
-        right: 30px;
-        width: 40vw; /* Diminui logo */
-        position: relative;
-        font-size: 10px; /* Reduz fonte */
-    }
-
-    .logo img {
-        width: 43vw; /* Diminui logo */
-        top: -830px;
-        position: relative;
-        left: -22px;
-        
-    }
-
-    .hamburguer{
-        top: 0px;
-        position: relative;
-        left: 12px;
-        width: 40px;
-       
-    }
-
-    .search-container{
-    
-        top: -76px;
-        position: relative;
-        left: 349px;
-        
-        width: 80px; /* Diminui logo */
-
-
-    }
-
-    .botao a{
-
-       
-        position: relative;
-        left: 33px;
-        
-        width: 40px; /* Diminui logo */
-        
-    }
-
-    .arastavel a{
-     
-    position: relative;
-        left: 100px;
-        top: 10;
-        width: 40px; /* Diminui logo */
-
-
-    }
-
-    .arastavel img{
-
-        position: relative;
-        left: 100px;
-        top: 10;
-        width: 40px; /* Diminui logo */
-
-    }
+/* Botão Saiba Mais */
+.botao {
+  text-align: center;
+  margin: 40px 0;
 }
 
-
-
-
-/* MEDIA QUERIES - AJUSTES EM TELAS GRANDES PC */
-
-
-@media (min-width: 768px) {
-    .menu a {
-        top: 70px;
-        position: relative;
-        left: 550px;
-        
-        font-size: 31px; /* Diminui tamanho dos links */
-    }
-
-    .texto-sobre h1 {
-        top: -9vh;
-        position: relative;
-        left: 0px;
-        font-size: 30px; /* Diminui título */
-    }
-
-    .texto-sobre p {
-        top: -6vh;
-        position: relative;
-        left: 0px;
-        font-size: 22px; /* Diminui título */
-    }
-
-    .botao {
-        top: -5vh; /* Reposiciona botão */
-        left: 30vw;
-        right: 30px;
-        width: 40vw; /* Diminui logo */
-        position: relative;
-        font-size: 10px; /* Reduz fonte */
-    }
-
-    .logo img {
-        width: 60vw; /* Diminui logo */
-        top: -1950px;
-        position: relative;
-        left: -22px;
-        
-    }
-
-    .hamburguer{
-        top: 50px;
-        position: relative;
-        left: 12px;
-        width: 40px;
-       
-    }
-
-    .search-container{
-    
-        top: -145px;
-        position: relative;
-        left: 1785px;
-        
-        width: 40px; /* Diminui logo */
-
-
-    }
-
-    .botao a{
-
-       
-        position: relative;
-        left: 33px;
-        
-        width: 40px; /* Diminui logo */
-        
-    }
-
-    .arastavel{
-    
-        position: relative;
-        left: 1px;
-        top: 1px;
-        width: 40px; /* Diminui logo */
-
-    }
-
-    .arastavel a{
-     
-    position: relative;
-        left: 1px;
-        top: 1px;
-        width: 40px; /* Diminui logo */
-
-
-    }
-
-    .arastavel img{
-
-        position: relative;
-        left: 1px;
-        top: 1px;
-        width: 40px; /* Diminui logo */
-
-    }
+.botao button {
+  padding: 12px 24px;
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
+.botao button:hover {
+  background-color: royalblue;
+}
 
+/* Campo de busca */
+.search-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
 
+.search-container img {
+  width: 24px;
+  cursor: pointer;
+}
 
+.search-container input {
+  padding: 8px;
+  margin-top: 10px;
+  width: 180px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Ícones redes sociais */
+.social-media {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+.social-media img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s;
+}
+
+.social-media img:hover {
+  transform: scale(1.2);
+}
+
+/* Media queries - responsividade */
+@media (max-width: 1024px) {
+  .caixa-foto {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .texto-sobre h1 {
+    font-size: 1.8rem;
+  }
+
+  .texto-sobre p {
+    font-size: 1rem;
+  }
+
+  .caixa-foto {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .search-container {
+    top: 10px;
+    right: 10px;
+  }
+
+  .social-media {
+    flex-direction: row;
+    bottom: 10px;
+    left: 10px;
+  }
+}
