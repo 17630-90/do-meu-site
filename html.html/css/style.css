@@ -1,284 +1,335 @@
-/* Reset e base */
-/* Remove margens e preenchimento padrão dos navegadores e define a fonte base */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif; /* Fonte padrão do site */
-    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+/* RESET E BASE */
 
+body, html {
+    margin: 0; /* Remove margens padrão dos navegadores */
+    padding: 0; /* Remove espaçamentos internos padrão */
+    font-family: Arial, sans-serif; /* Define a fonte base do site */
+    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho total do elemento */
 }
 
 body {
-
-    background-image: url('fundo pagina.jpg'); /* caminho da imagem */
-    background-size: cover; /* cobre toda a tela */
-    background-position: center; /* centraliza a imagem */
-    background-repeat: no-repeat; /* não repete a imagem */
-    background-attachment: fixed; /* fixa o fundo ao rolar a página */
+    background-image: url('fundo pagina.jpg'); /* Define imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-attachment: fixed; /* Faz o fundo ficar fixo ao rolar a página */
 }
 
+/* BARRA DE PESQUISA */
 
-/* Barra de pesquisa */
-/* Container da barra de pesquisa fixado no canto superior direito */
 .search-container {
-    position: fixed; /* Fixa no lugar mesmo rolando a página */
-    top: 17px; /* Distância do topo */
-    right: 10px; /* Distância da direita */
-    display: flex; /* Elementos lado a lado */
-    align-items: center; /* Alinhamento vertical centralizado */
-    z-index: 1000; /* Fica acima de outros elementos */
+    position: fixed; /* Fixa o container na tela */
+    top: 1px; /* Distância do topo */
+    right: 9px; /* Distância da direita */
+    display: flex; /* Coloca os elementos lado a lado */
+    align-items: center; /* Alinha verticalmente ao centro */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
 }
 
-/* Ícone de lupa */
 .search-icon img {
-    width: 35px; /* Largura da imagem da lupa */
-    height: 34px; /* Altura da imagem */
-    cursor: pointer; /* Cursor de clique */
+    width: 8vw; /* Largura relativa à largura da tela */
+    max-width: 60px; /* Limite máximo de largura */
+    height: auto; /* Altura proporcional */
+    cursor: pointer; /* Mostra o cursor de clique */
     margin-right: 8px; /* Espaço à direita da imagem */
 }
 
-/* Campo de pesquisa escondido inicialmente */
 #search {
     display: none; /* Começa oculto */
-    padding: 20px; /* Espaçamento interno */
+    padding: 20px; /* Espaço interno */
     border: 2px solid #ccc; /* Borda cinza clara */
     border-radius: 4px; /* Cantos arredondados */
-    font-size: 17px; /* Tamanho da fonte */
+    font-size: 17px; /* Tamanho do texto */
 }
 
-/* Botão hamburguer */
-/* Estilização do botão com as 3 linhas */
+/* BOTÃO HAMBÚRGUER */
+
 .button {
-    position: relative; /* Posição relativa para o menu dropdown */
-    margin: 20px; /* Espaço ao redor */
+    position: relative; /* Base para o dropdown */
+    margin: 2vw; /* Espaço em volta */
+    top: -75px;
+    position: relative;
+    left: 300px;
+    background-color: #ff0202; /* Fundo azul */  
+    width: 60px; /* Diminui logo */
+    
     cursor: pointer; /* Cursor de clique */
 }
 
-/* As 3 linhas horizontais do botão */
+.botao a{
+
+background-color: #ff0202; /* Fundo azul */
+
+}
+
 .line {
-    width: 30px; /* Largura da linha */
-    height: 4px; /* Altura da linha */
+    width: 7vw; /* Largura proporcional à tela */
+    max-width: 30px; /* Limite máximo */
+    height: 4px; /* Espessura da linha */
     background-color: black; /* Cor preta */
     margin: 6px 0; /* Espaço entre as linhas */
 }
 
-/* Menu dropdown escondido por padrão */
+/* MENU DROPDOWN */
+
 .dropdown {
-   display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 80px; /* abaixo do botão hambúrguer */
-  left: 20px;
-  background-color: #679cff;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  z-index: 999;
-
+    display: none; /* Começa oculto */
+    flex-direction: column; /* Organiza itens verticalmente */
+    position: absolute; /* Posição relativa ao botão */
+    top: 80px; /* Distância do topo */
+    left: 60px; /* Distância da esquerda */
+    background-color: #679cff; /* Fundo azul */
+    padding: 10px; /* Espaço interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Sombra */
+    z-index: 999; /* Acima de outros elementos */
 }
 
-/* Classe usada pelo JavaScript para mostrar o menu */
 .dropdown.show {
-    display: flex; /* Exibe o menu em coluna */
+    display: flex; /* Torna o menu visível e em coluna */
 }
 
-/* Estilo dos links dentro do dropdown */
 .dropdown a {
-    color: black;
-  text-decoration: none;
-  padding: 8px 12px;
-
-}
-
-/* Efeito ao passar o mouse sobre os links do menu */
-.dropdown a:hover {
-    background-color: #fffffffa; /* Fundo cinza claro ao passar o mouse */
-}
-
-
-
-
-
-
-/* Cabeçalho */
-/* Seção do topo da página com logo e menu */
-header {
-    display: flex; /* Alinha os elementos lado a lado */
-    justify-content: space-between; /* Espaça entre logo e menu */
-    align-items: center; /* Alinha verticalmente */
-    padding: 20px; /* Espaçamento interno */
-    background-color: #f5f5f5; /* Cor de fundo clara */
-    border-bottom: 5px solid #ccc; /* Linha separando o cabeçalho */
-    
-    
-}
-
-.center{
-    display: block; /* Alinha os elementos lado a lado */
-    justify-content: space-between; /* Espaça entre logo e menu */
-    align-items: center; /* Alinha verticalmente */
-    padding: 25px; /* Espaçamento interno */
-    background-color: #f5f5f5; /* Cor de fundo clara */
-   
-    width: -20px;
-    height: 40px;
-    font-size: 20px;
-    left: 30px;
-    top: 97px;
-    
-}
-
-
-
-/* controla menu */
-.menu a {
-    margin: 0 10px; /* Espaçamento entre os links */
+    color: black; /* Cor do texto */
     text-decoration: none; /* Remove sublinhado */
-    color: #333; /* Cor escura para os links */
-    position: relative; /* Necessário para posicionar a linha animada */
-    left: 1355px;
-    top: 30px;
-    font-weight:bold;
-    font-weight: 100px;
-    font-size: 23px; /* aumenta o título */
-    text-shadow: 2px 2px 4px rgba(255, 52, 2, 0.2);
-
+    padding: 8px 12px; /* Espaçamento interno */
 }
 
-.menu{
-    font-weight: bold;
-    
+.dropdown a:hover {
+    background-color: #fffffffa; /* Fundo branco translúcido ao passar o mouse */
 }
 
-/* Linha animada que aparece embaixo dos links ao passar o mouse */
+/* CABEÇALHO */
+
+header {
+    display: flex; /* Elementos lado a lado */
+    justify-content: space-between; /* Espaço entre logo e menu */
+    align-items: center; /* Alinha verticalmente */
+    padding: 2vw; /* Espaço interno relativo */
+    background-color: #f5f5f5; /* Cor de fundo */
+    border-bottom: 5px solid #ccc; /* Linha inferior */
+}
+
+.center {
+    display: flex; /* Lado a lado */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    padding: 2vw; /* Espaço interno */
+    background-color: #f5f5f5; /* Fundo claro */
+}
+
+/* LINKS DO MENU */
+
+.menu a {
+    margin: 0 2vw; /* Espaço horizontal entre os links */
+    text-decoration: none; /* Remove sublinhado */
+    color: #333; /* Cor do texto */
+    position: relative; /* Para animar a linha embaixo */
+    font-size: 4vw; /* Tamanho do texto relativo */
+    max-font-size: 23px; /* Tamanho máximo */
+    text-shadow: 2px 2px 4px rgba(255, 52, 2, 0.2); /* Sombra leve no texto */
+}
+
 .menu a::after {
-    content: ""; /* Elemento vazio criado para a linha */
+    content: ""; /* Elemento vazio para linha animada */
     display: block;
-    width: 0; /* Começa com largura zero */
+    width: 0; /* Começa invisível */
     height: 2px; /* Espessura da linha */
     background: #333; /* Cor da linha */
-    transition: width 0.3s; /* Animação de expansão */
-    position: absolute; /* Posicionamento em relação ao link */
-    bottom: -5px; /* Abaixo do texto do link */
-    left: 0; /* Começa no canto esquerdo */
+    transition: width 0.3s; /* Animação de crescimento */
+    position: absolute; /* Posicionado embaixo do link */
+    bottom: -5px; /* Um pouco abaixo do texto */
+    left: 0; /* Começa da esquerda */
 }
 
-/* Quando o mouse passa sobre o link, a linha se expande */
 .menu a:hover::after {
-    width: 100%; /* A linha se estende por todo o link */
+    width: 100%; /* Linha ocupa toda a largura ao passar o mouse */
 }
 
-/* Seção Sobre */
-/* Área com informações sobre você ou seu trabalho */
+/* BOTÃO "SAIBA MAIS" */
 
-
-/* center meche no botão saiba mas*/
 .botao {
-  margin-top: 20px;         /* Espaço entre o texto e o botão */
-  padding: 12px 24px;
-  font-size: 20px;
-  border-radius: 8px;
-  display: inline-block;   
-  transition: background-color 0.3s ease;
-  font-weight: bold;
-  position: fixed;
-  top: 550px;
-  left: 920px;
-
-    padding: 10px 20px; /* Espaçamento interno (vertical e horizontal) */
-    background-color: rgb(90, 0, 0); /* Cor azul clara */
-    border: none; /* Remove a borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    color: rgb(255, 255, 255); /* Cor do texto */
-    font-size: 20px; /* Tamanho do texto */
-    cursor: pointer; /* Cursor de clique */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 5vw; /* Espaço acima do botão */
+    padding: 2.5vw 3vw; /* Espaço interno */
+    font-size: 50vw; /* Tamanho do texto */
+    border-radius: 7px; /* Bordas arredondadas */
+    display: inline-block;
+    font-weight: bold;
+    position: fixed; /* Fixa na tela */
+    top: 70vh; /* Distância do topo da tela */
+    left: 70vw; /* Distância da esquerda */
+    background-color: rgb(90, 0, 0); /* Cor do botão */
+    border: none; /* Remove borda */
+    color: white; /* Cor do texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra no texto */
 }
 
+/* SEÇÃO SOBRE */
 
 .texto-sobre {
-  padding: 20px 30px;              /* Reduzido para subir o texto */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  position: relative;              /* Permite usar top/left para ajustes finos */
-  top: 90px;                      /* Sobe o texto */
-  left: 40px;
-  display: block;
-}
-
-.texto-sobre h1 {
-  font-size: 40px; /* aumenta o título */
-}
-
-.texto-sobre p {
-  font-size: 16px; /* aumenta o parágrafo */
-}
-
-#arrastavel {
-  position: relative;
-  top: 230px;
-  right: 60px;
-  left: 50px;
-  z-index: 9999;
-  cursor: move;
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-#arrastavel a {
-  display: block;
-  margin-bottom: 15px;
-}
-
-#arrastavel img {
-  width: 40px;
-  height: auto;
-  display: block;
-}
-
-/* Texto dentro da seção Sobre */
-.texto-sobre {
-    max-width: 700px; /* Largura máxima do texto */
+    padding: 4vw; /* Espaço interno */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra no texto */
+    position: relative;
+    top: 5vh; /* Distância do topo da página */
+    left: auto;
+    display: block;
+    max-width: 50vw; /* Largura máxima */
     margin: 0 auto; /* Centraliza horizontalmente */
     text-align: center; /* Centraliza o texto */
 }
 
-/* Estilo dos botões */
+.texto-sobre h1 {
+    font-size: 6vw; /* Título grande */
+    max-font-size: 40px; /* Tamanho máximo */
+}
+
+.texto-sobre p {
+    font-size: 4vw; /* Parágrafo com fonte responsiva */
+    max-font-size: 16px; /* Tamanho máximo */
+}
+
+/* LINKS ARRÁSTAVEIS (REDES SOCIAIS?) */
+
+#arrastavel {
+    position: relative;
+    top: 30vh; /* Distância do topo */
+    left: 5vw;
+    z-index: 9999; /* Fica sobre tudo */
+    cursor: move; /* Indica que é arrastável */
+}
+
+#arrastavel img {
+    width: 8vw; /* Tamanho relativo */
+    max-width: 40px; /* Tamanho máximo */
+    height: auto;
+}
+
+/* ÍCONE DO MENU HAMBÚRGUER */
+
 .hamburguer {
-  width: 40px;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-
+    width: 10vw; /* Tamanho responsivo */
+    max-width: 40px;
+    cursor: pointer;
+    position: fixed; /* Fixo na tela */
+    top: 2vh;
+    left: 2vw;
+    z-index: 1000;
 }
 
-.line{
+/* LINHAS DO HAMBÚRGUER */
 
-  width: 30px;
-  height: 4px;
-  background-color: black;
-  margin: 6px 0;
-
-
+.line {
+    width: 7vw;
+    max-width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 6px 0;
 }
 
-/* Efeito ao passar o mouse no botão */
+/* BOTÃO AO PASSAR O MOUSE */
+
 button:hover {
-    background-color: rgb(255, 255, 255); /* Azul mais escuro ao passar o mouse */
+    background-color: white; /* Muda para branco ao passar o mouse */
 }
 
+/* LOGO FIXA NO TOPO */
 
-
-
-/* Logo no cabeçalho */
 .logo img {
-    width: 470px;
-    height: 460px; /* Altura da imagem da logo */
-    top: -150px;
-    left: -5px;
-    position: fixed;
+    width: 60vw; /* Tamanho responsivo */
+    max-width: 470px;
+    height: auto;
+    top: -10vh; /* Levemente acima do topo visível */
+    left: 0;
+    position: fixed; /* Fixa na tela */
 }
 
+/* MEDIA QUERIES - AJUSTES EM TELAS PEQUENAS */
 
+@media (max-width: 768px) {
+    .menu a {
+        top: 25px;
+        position: relative;
+        left: 60px;
+        
+        font-size: 14px; /* Diminui tamanho dos links */
+    }
+
+    .texto-sobre h1 {
+        top: -9vh;
+        position: relative;
+        left: 0px;
+        font-size: 30px; /* Diminui título */
+    }
+
+    .texto-sobre p {
+        top: -6vh;
+        position: relative;
+        left: 0px;
+        font-size: 22px; /* Diminui título */
+    }
+
+    .botao {
+        top: -5vh; /* Reposiciona botão */
+        left: 30vw;
+        right: 30px;
+        width: 40vw; /* Diminui logo */
+        position: relative;
+        font-size: 10px; /* Reduz fonte */
+    }
+
+    .logo img {
+        width: 43vw; /* Diminui logo */
+        top: -830px;
+        position: relative;
+        left: -22px;
+        
+    }
+
+    .hamburguer{
+        top: 0px;
+        position: relative;
+        left: 12px;
+        width: 60px;
+       
+    }
+
+    .search-container{
+    
+        top: -76px;
+        position: relative;
+        left: 349px;
+        
+        width: 60px; /* Diminui logo */
+
+
+    }
+
+    .botao a{
+
+       
+        position: relative;
+        left: 33px;
+        
+        width: 40px; /* Diminui logo */
+        
+    }
+
+    .arastavel a{
+     
+    position: relative;
+        left: 100px;
+        top: 10;
+        width: 40px; /* Diminui logo */
+
+
+    }
+
+    .arastavel img{
+
+        position: relative;
+        left: 100px;
+        top: 10;
+        width: 40px; /* Diminui logo */
+
+    }
+}
