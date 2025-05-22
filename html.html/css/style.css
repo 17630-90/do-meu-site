@@ -137,25 +137,27 @@ header {
 /* Seção Sobre */
 /* Área com informações sobre você ou seu trabalho */
 .sobre {
-    padding: 100px 30px; /* Espaçamento interno grande */
-    background-color: #ffffffc7; /* Fundo branco */
-    top: 100px;
-    left: 20px;
-    cursor: move;
+    padding: 100px 30px;            /* Define espaçamento interno: 100px no topo e embaixo, 30px nas laterais */
+    background-color: #ffffffc7;    /* Define a cor de fundo como branco com leve transparência (c7 é o valor alfa) */
+    top: 100px; 
+    right: 20px;                    /* Define a posição do topo (não terá efeito se não houver 'position' definida) */
+    left: auto;                    /* Define a posição à esquerda (também depende de 'position') */
+    cursor: move;                   /* Altera o cursor para indicar que o elemento pode ser arrastado */
     z-index: 9999;
-
+    position:fixed;                  /* Garante que esta seção fique sobre os outros elementos na página */
+    /* Obs: faltou uma propriedade 'position' como 'absolute' ou 'fixed' para que 'top' e 'left' funcionem corretamente */
 }
 
 /* Seção de elementos extras como redes sociais */
 .social-media a {
-  display: block;         /* Coloca os links um embaixo do outro */
-  margin-bottom: 20px;    /* Espaçamento entre os links */
+    display: block;              /* Faz com que cada link ocupe uma linha inteira (um abaixo do outro) */
+    margin-bottom: 20px;         /* Adiciona espaçamento de 20px abaixo de cada link */
 }
 
 .social-media img {
-  width: 40px;            /* Ajusta o tamanho dos ícones */
-  left: auto;
-  
+    width: 40px;                 /* Define a largura dos ícones como 40 pixels */
+    right: auto;                   /* Define o deslocamento horizontal — porém essa propriedade também requer 'position' */
+    /* Obs: assim como na classe '.sobre', 'left' não surtirá efeito sem uma propriedade 'position' */
 }
 
 
