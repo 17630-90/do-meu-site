@@ -140,7 +140,7 @@ header {
     padding: 100px 30px; /* Espaçamento interno grande */
     background-color: #ffffffc7; /* Fundo branco */
     top: 100px;
-    right: 20px;
+    left: 20px;
     cursor: move;
     z-index: 9999;
 
@@ -154,7 +154,7 @@ header {
 
 .social-media img {
   width: 40px;            /* Ajusta o tamanho dos ícones */
-  height: auto;
+  left: auto;
   
 }
 
