@@ -1,53 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SG</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SG Fotografia</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-    
-    <header>
-        <div class="logo">
-            <a href="Index.html">
-             <img src="Design sem nome.svg" alt="logo"/></a>
-        </div>
-        
-        <div class="center">
-           <!--logo-->
-           <nav class="menu">
 
-            <a href="Index.html">Home</a>
+   
+<!-- Botão do menu hambúrguer -->
+<!-- Botão do menu hambúrguer -->
+<div class="hamburguer" id="hamburguer">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
 
-            <a href="Portifolio.html">Portifolio</a>
+<!-- Menu dropdown separado -->
+<div class="dropdown" id="dropdown-menu">
+  <a href="https://adobe.ly/3sWl4Pm" target="_blank">Casamentos</a>
+  <a href="https://adobe.ly/3FrM8Zx" target="_blank">Formatura</a>
+  <a href="https://drive.google.com/drive/folders/1cnRCYdm1yabrhgJNTKf0ehSgOh54ahi9" target="_blank">Aniversários</a>
+  <a href="https://adobe.ly/3Slp2vu" target="_blank">Temáticos</a>
+</div>
 
-            <a href="http://open.spotify.com/artist/0SMqFL5vIzK3IB7yqSTX4L">Spotify</a>
 
-            <a href="Sobre.html">Sobre</a>
-            
-        </nav>
-        
-        </div> <!--center-->
-    </header>
-    <section class="sobre">
-        <div class="extras">
-        <div class="social-media">
-          <a href="https://www.facebook.com/samuelcantaoficial/"><img src="facebook.png" alt="Facebook"/></a> 
-          <a href="https://www.instagram.com/samuelcantaoficial/?hl=pt_BR"><img src="instagran.png" alt="Instagram"/></a> 
-          <a href="https://www.youtube.com/@SamuelCantao"><img src="youtube.png" alt="YouTube"/></a> 
-        </div><!--social-media-->
-        </div><!--extras-->
-        <div class="center">
-            <div class="texto-sobre">
-                
-                
-                
-                
-               
-                
-            </div><!--texto-sobre-->
-        </div><!--center-->
-    </section><!--sobre-->
+<!-- Cabeçalho -->
+
+<div class="center" id="center">
+    <nav class="menu">
+      <a href="Index.html">HOME</a>
+      <a href="Portifolio.html" target="_blank">PORTIFÓLIO</a>
+      <a href="http://open.spotify.com/artist/0SMqFL5vIzK3IB7yqSTX4L" target="_blank">SPOTIFY</a>
+      <a href="Sobre.html" target="_blank">+</a>
+    </nav>
+  </div>
+
+
+<header>
+  <!-- Barra de Pesquisa -->
+  <div class="search-container">
+    <a href="#" class="search-icon">
+      <img src="lupa.svg" alt="Pesquisa" />
+    </a>
+    <form id="searchForm" style="display: none;">
+      <input type="text" id="searchInput" placeholder="Digite para pesquisar..." />
+    </form>
+  </div>
+</header>
+
+<!-- RESULTADOS DE BUSCA -->
+<div id="searchResults" style="padding: 20px; font-family: sans-serif;"></div>
+
+
+<div class="texto-sobre" id="texto-sobre">
+      <h1>Seja Bem Vindo<br/> À minha Página <span style="color: cornflowerblue;">Portifolio</span> SG Fotografia</h1>
+      <p>Samuel Garcia, conhecido pela marca SG Fotografia, <br/> é um fotógrafo talentoso que tem a habilidade de capturar momentos únicos através de sua lente...
+      </p>
+</div>
+
+<!-- Seção com fundo continua intacta -->
+<!-- Seção Sobre -->
+
+
+
+
+<!-- Ícones agora são independentes -->
+<div class="social-media" id="arrastavel">
+  <a href="https://www.facebook.com/samuelcantaoficial/" target="_blank">
+    <img src="facebook.png" alt="Facebook"/>
+  </a>
+  <a href="https://www.instagram.com/samuelcantaoficial/?hl=pt_BR" target="_blank">
+    <img src="instagram.png" alt="Instagram"/>
+  </a>
+  <a href="https://www.youtube.com/@SamuelCantao" target="_blank">
+    <img src="youtube.png" alt="YouTube"/>
+  </a>
+</div>
+<!-- Scripts das logos ds redes -->
+<script>
+  const el = document.getElementById("arrastavel");
+  let isDragging = false;
+  let offset = { x: 0, y: 0 };
+
+  el.addEventListener("mousedown", function (e) {
+    isDragging = true;
+    const rect = el.getBoundingClientRect();
+    offset.x = e.clientX - rect.left;
+    offset.y = e.clientY - rect.top;
+    el.style.right = "auto";
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+  });
+
+  document.addEventListener("mousemove", function (e) {
+    if (isDragging) {
+      el.style.left = (e.clientX - offset.x) + "px";
+      el.style.top = (e.clientY - offset.y) + "px";
+    }
+  });
+</script>
+
+<!-- Scripts menu hambúrguer -->
+<script>
+  // Alternar menu hambúrguer
+  const toggleBtn = document.getElementById('hamburguer');
+  const dropdownMenu = document.getElementById('dropdown-menu');
+
+  toggleBtn.addEventListener('click', function () {
+    dropdownMenu.classList.toggle('show');
+  });
+
+  // Mostrar/ocultar campo de busca
+  document.querySelector('.search-icon').addEventListener('click', function(event) {
+    event.preventDefault();
+    const form = document.getElementById('searchForm');
+    form.style.display = (form.style.display === 'none') ? 'block' : 'none';
+    document.getElementById('searchInput').focus();
+  });
+
+  
+
+  // Dados simulando páginas internas
+  const siteData = [
+    { title: "Casamentos", url: "https://adobe.ly/3sWl4Pm", keywords: ["casamento", "noiva", "festa"] },
+    { title: "Formatura", url: "https://adobe.ly/3FrM8Zx", keywords: ["formatura", "colação", "turma"] },
+    { title: "Aniversários", url: "https://drive.google.com/drive/folders/1cnRCYdm1yabrhgJNTKf0ehSgOh54ahi9", keywords: ["aniversário", "festa", "bolo"] },
+    { title: "Temáticos", url: "https://adobe.ly/3Slp2vu", keywords: ["temático", "ensaio", "tema"] },
+    { title: "Sobre", url: "#", keywords: ["biografia", "quem sou", "fotógrafo"] }
+  ];
+
+  // Função de busca
+  document.getElementById("searchForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const query = document.getElementById("searchInput").value.toLowerCase();
+    const resultsDiv = document.getElementById("searchResults");
+    resultsDiv.innerHTML = ""; // Limpa resultados anteriores
+
+    const results = siteData.filter(item =>
+      item.title.toLowerCase().includes(query) ||
+      item.keywords.some(keyword => keyword.toLowerCase().includes(query))
+    );
+
+    if (results.length > 0) {
+      results.forEach(result => {
+        const link = document.createElement("a");
+        link.href = result.url;
+        link.textContent = result.title;
+        link.target = "_blank";
+        link.style.display = "block";
+        link.style.marginBottom = "10px";
+        resultsDiv.appendChild(link);
+      });
+    } else {
+      resultsDiv.textContent = "Nenhum resultado encontrado.";
+    }
+  });
+</script>
+
+<div class="botao" id="botao">
+    <a href="https://sites.google.com/view/sgfotografias/home" target="_blank">
+        <button>Saiba Mais</button>
+      </a>
+</div>
+
+
+<div class="logo" id="logo">
+    <a href="Index.html" target="_blank">
+      <img src="logo nova.svg" alt="logo"/>
+    </a>
+  </div>
+
 </body>
 </html>
