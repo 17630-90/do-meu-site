@@ -138,29 +138,36 @@ header {
 /* Área com informações sobre você ou seu trabalho */
 .sobre {
     padding: 100px 30px;            /* Define espaçamento interno: 100px no topo e embaixo, 30px nas laterais */
-    background-color: #ffffffc7;    /* Define a cor de fundo como branco com leve transparência (c7 é o valor alfa) */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.5);
     top: 100px; 
     right: 20px;                    /* Define a posição do topo (não terá efeito se não houver 'position' definida) */
-    left: auto;                    /* Define a posição à esquerda (também depende de 'position') */
-    cursor: move;                   /* Altera o cursor para indicar que o elemento pode ser arrastado */
-    z-index: 9999;
-    position:fixed;                  /* Garante que esta seção fique sobre os outros elementos na página */
-    /* Obs: faltou uma propriedade 'position' como 'absolute' ou 'fixed' para que 'top' e 'left' funcionem corretamente */
+    left: center;                    /* Define a posição à esquerda (também depende de 'position') */
+    position:center;                  /* Garante que esta seção fique sobre os outros elementos na página */
+    
 }
 
-/* Seção de elementos extras como redes sociais */
-.social-media a {
-    display: block;              /* Faz com que cada link ocupe uma linha inteira (um abaixo do outro) */
-    margin-bottom: 20px;         /* Adiciona espaçamento de 20px abaixo de cada link */
+#arrastavel {
+  position: relative;
+  top: 120px;
+  right: 60px;
+  left: 50px;
+  z-index: 9999;
+  cursor: move;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
-.social-media img {
-    width: 40px;                 /* Define a largura dos ícones como 40 pixels */
-    right: auto;                   /* Define o deslocamento horizontal — porém essa propriedade também requer 'position' */
-    /* Obs: assim como na classe '.sobre', 'left' não surtirá efeito sem uma propriedade 'position' */
+#arrastavel a {
+  display: block;
+  margin-bottom: 15px;
 }
 
-
+#arrastavel img {
+  width: 40px;
+  height: auto;
+  display: block;
+}
 
 /* Texto dentro da seção Sobre */
 .texto-sobre {

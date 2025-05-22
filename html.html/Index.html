@@ -53,17 +53,9 @@
 <!-- RESULTADOS DE BUSCA -->
 <div id="searchResults" style="padding: 20px; font-family: sans-serif;"></div>
 
+<!-- Seção com fundo continua intacta -->
 <!-- Seção Sobre -->
 <section class="sobre">
-  <div class="extras">
-    <div class="social-media">
-      
-      <a href="https://www.facebook.com/samuelcantaoficial/" target="_blank"><img src="facebook.png" alt="Facebook"/></a>
-      <a href="https://www.instagram.com/samuelcantaoficial/?hl=pt_BR" target="_blank"><img src="instagram.png" alt="Instagram"/></a>
-      <a href="https://www.youtube.com/@SamuelCantao" target="_blank"><img src="youtube.png" alt="YouTube"/></a>
-
-    </div>
-  </div>
   <div class="center">
     <div class="texto-sobre">
       <h1>Seja Bem Vindo<br/> À minha Página <span style="color: cornflowerblue;">Portifolio</span> SG Fotografia</h1>
@@ -76,7 +68,45 @@
   </div>
 </section>
 
-<!-- Scripts -->
+<!-- Ícones agora são independentes -->
+<div class="social-media" id="arrastavel">
+  <a href="https://www.facebook.com/samuelcantaoficial/" target="_blank">
+    <img src="facebook.png" alt="Facebook"/>
+  </a>
+  <a href="https://www.instagram.com/samuelcantaoficial/?hl=pt_BR" target="_blank">
+    <img src="instagram.png" alt="Instagram"/>
+  </a>
+  <a href="https://www.youtube.com/@SamuelCantao" target="_blank">
+    <img src="youtube.png" alt="YouTube"/>
+  </a>
+</div>
+<!-- Scripts das logos ds redes -->
+<script>
+  const el = document.getElementById("arrastavel");
+  let isDragging = false;
+  let offset = { x: 0, y: 0 };
+
+  el.addEventListener("mousedown", function (e) {
+    isDragging = true;
+    const rect = el.getBoundingClientRect();
+    offset.x = e.clientX - rect.left;
+    offset.y = e.clientY - rect.top;
+    el.style.right = "auto";
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+  });
+
+  document.addEventListener("mousemove", function (e) {
+    if (isDragging) {
+      el.style.left = (e.clientX - offset.x) + "px";
+      el.style.top = (e.clientY - offset.y) + "px";
+    }
+  });
+</script>
+
+<!-- Scripts menu hambúrguer -->
 <script>
   // Alternar menu hambúrguer
   const toggleBtn = document.getElementById('menu-toggle');
@@ -93,6 +123,8 @@
     form.style.display = (form.style.display === 'none') ? 'block' : 'none';
     document.getElementById('searchInput').focus();
   });
+
+  
 
   // Dados simulando páginas internas
   const siteData = [
