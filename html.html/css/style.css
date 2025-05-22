@@ -5,6 +5,13 @@ body, html {
     padding: 0;
     font-family: Arial, sans-serif; /* Fonte padrão do site */
     box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+
+    background-image: url('25910836-interior-do-umagrafia-estudio-com-uma-em-branco-pano-de-fundo-gratis-foto.jpg'); /* caminho da imagem */
+    background-size: cover; /* cobre toda a tela */
+    background-position: center; /* centraliza a imagem */
+    background-repeat: no-repeat; /* não repete a imagem */
+    background-attachment: fixed; /* fixa o fundo ao rolar a página */
+
 }
 
 /* Barra de pesquisa */
