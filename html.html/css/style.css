@@ -3,7 +3,7 @@
 body, html {
     margin: 0; /* Remove margens padrão dos navegadores */
     padding: 0; /* Remove espaçamentos internos padrão */
-    font-family: Arial, sans-serif; /* Define a fonte base do site */
+    font-family: sans-serif; /* Define a fonte base do site */
     box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho total do elemento */
 }
 
@@ -13,6 +13,33 @@ body {
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita repetição da imagem */
     background-attachment: fixed; /* Faz o fundo ficar fixo ao rolar a página */
+    height: 100%;
+    padding: 0
+}
+
+body {
+    margin: 0;
+}
+
+body[] {
+    direction: ltr;
+}
+user agent stylesheet
+[dir="ltr" i] {
+    unicode-bidi: isolate;
+}
+user agent stylesheet
+body {
+    display: block;
+    margin: 8px;
+}
+html {
+    font-size: 16px;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 /* BARRA DE PESQUISA */
