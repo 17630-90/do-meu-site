@@ -9,7 +9,7 @@ body, html {
 }
 
 body {
-    
+
     background-image: url('fundo pagina.jpg'); /* caminho da imagem */
     background-size: cover; /* cobre toda a tela */
     background-position: center; /* centraliza a imagem */
@@ -137,22 +137,23 @@ header {
 /* Seção Sobre */
 /* Área com informações sobre você ou seu trabalho */
 .sobre {
-    padding: 80px 20px; /* Espaçamento interno grande */
-    background-color: #fff; /* Fundo branco */
+    padding: 100px 30px; /* Espaçamento interno grande */
+    background-color: #ffffffc7; /* Fundo branco */
 }
 
 /* Seção de elementos extras como redes sociais */
-.extras {
-    display: flex; /* Elementos lado a lado */
-    justify-content: center; /* Centralizados horizontalmente */
-    margin-bottom: 10px; /* Espaçamento inferior */
+.social-media a {
+  display: block;         /* Coloca os links um embaixo do outro */
+  margin-bottom: 20px;    /* Espaçamento entre os links */
+  text-align: center;     /* Centraliza o conteúdo (imagem) */
 }
 
-/* Ícones das redes sociais */
-.social-media a img {
-    width: 45px; /* Tamanho dos ícones */
-    margin: 0 30px; /* Espaçamento entre eles */
+.social-media img {
+  width: 40px;            /* Ajusta o tamanho dos ícones */
+  height: auto;
 }
+
+
 
 /* Texto dentro da seção Sobre */
 .texto-sobre {
