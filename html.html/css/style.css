@@ -110,26 +110,40 @@ header {
 }
 
 .center{
-    display: flex; /* Alinha os elementos lado a lado */
+    display: block; /* Alinha os elementos lado a lado */
     justify-content: space-between; /* Espaça entre logo e menu */
     align-items: center; /* Alinha verticalmente */
-    padding: 20px; /* Espaçamento interno */
+    padding: 25px; /* Espaçamento interno */
     background-color: #f5f5f5; /* Cor de fundo clara */
-    border-bottom: 5px solid #ccc; /* Linha separando o cabeçalho */
+   
     width: -20px;
     height: 40px;
     font-size: 20px;
-
+    left: 30px;
+    top: 97px;
+    
 }
 
 
 
-/* Links do menu principal */
+/* controla menu */
 .menu a {
     margin: 0 10px; /* Espaçamento entre os links */
     text-decoration: none; /* Remove sublinhado */
     color: #333; /* Cor escura para os links */
     position: relative; /* Necessário para posicionar a linha animada */
+    left: 1355px;
+    top: 30px;
+    font-weight:bold;
+    font-weight: 100px;
+    font-size: 27px; /* aumenta o título */
+    text-shadow: 2px 2px 4px rgba(255, 52, 2, 0.2);
+
+}
+
+.menu{
+    font-weight: bold;
+    
 }
 
 /* Linha animada que aparece embaixo dos links ao passar o mouse */
@@ -227,10 +241,21 @@ header {
 
 /* Estilo dos botões */
 .hamburguer {
-   width: 40px;
+  width: 50px;
   height: 50px;
   display: block;  
-  left: 1500px;
+  left: 15px;
+  position: relative;
+  top: 5px;
+}
+
+.line{
+
+  width: 40px;
+  height: -40px;
+  display: block;  
+  left: 60px;
+
 }
 
 /* Efeito ao passar o mouse no botão */
@@ -243,8 +268,11 @@ button:hover {
 
 /* Logo no cabeçalho */
 .logo img {
-    width: 200px;
-    height: 200px; /* Altura da imagem da logo */
+    width: 450px;
+    height: 450px; /* Altura da imagem da logo */
+    top: -100px;
+    left: -40px;
+    position: fixed;
 }
 
 
